@@ -15,10 +15,11 @@ private:
     //LINKED LIST: CUSTOMERS
     Customer *chead;
     int ccurrentlyInList;
-    int ccomparisons;
+    int ccomparisonsLL;
     
     //BINARY SEARCH TREE: CUSTOMERS
     Customer *croot;
+    int ccomparisonsBST;
     
         //BST private search function
     Customer* privateSearchCustomer(Customer *x, int _customerID);
@@ -42,6 +43,7 @@ public:
     int getccurrentlyInList();
     void addCustomer(Customer *_newCustomer);
     void search(int _customerID);
+    int getNumberOfComparisonsLL();
         //void write(string fn);
         //void writeCustomer(Customer *x);
     
@@ -49,6 +51,7 @@ public:
     //BINARY SEARCH TREE: CUSTOMER METHODS
     void addCustomerBST(Customer *_newCustomer);
     Customer* publicSearchCustomer(int _customerID);
+    int getNumberOfComparisonsBST();
     
     
     //LINKED LIST: ACCOUNT METHODS

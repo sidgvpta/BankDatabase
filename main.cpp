@@ -68,7 +68,8 @@ int main()
     cout << "Enter Customer ID: ";
     cin >> customerIDSearch;
     bank1.search(customerIDSearch); //this search function calls the printCustomer() function within it.
-    
+    int numberOfComparisons = bank1.getNumberOfComparisonsLL();
+    cout << "Number of Comparisons made (linked list): " << numberOfComparisons << endl;
     
     //----------------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------------
@@ -148,6 +149,8 @@ int main()
     {
         search->printCustomer();
     }
+    numberOfComparisons = bank2.getNumberOfComparisonsBST();
+    cout << "Number of Comparisons made (binary search trees): " << numberOfComparisons << endl;
     
     return 0;
 }

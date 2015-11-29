@@ -13,7 +13,7 @@ Bank::Bank()
     
     ccurrentlyInList = acurrentlyInList = 0;
     
-    ccomparisons = acomparisons = 0;
+    ccomparisonsLL = ccomparisonsBST = acomparisons = 0;
     
     totalaccountsbalance = 0;
 }
@@ -32,6 +32,11 @@ int Bank::getacurrentlyInList()
 int Bank::getTotalAccountsBalance()
 {
     return totalaccountsbalance;
+}
+
+int Bank::getNumberOfComparisonsLL()
+{
+    return ccomparisonsLL;
 }
 
 void Bank::addCustomer(Customer *_newCustomer)
@@ -75,6 +80,7 @@ void Bank::search(int _customerID)
     
     while ((current->next) != NULL)
     {
+        ccomparisonsLL++;
         if ((current->customerID) == _customerID)
         {
             cout << "Customer found. Details:" << endl;
@@ -94,6 +100,12 @@ void Bank::search(int _customerID)
 }
 
 //BINARY SEARCH TREE: CUSTOMER METHODS
+
+int Bank::getNumberOfComparisonsBST()
+{
+    return ccomparisonsBST;
+}
+
 void Bank::addCustomerBST(Customer *_newCustomer)
 {
     Customer *current;
@@ -142,6 +154,7 @@ void Bank::addCustomerBST(Customer *_newCustomer)
 
 Customer *Bank::privateSearchCustomer(Customer *_x, int _customerID) //helper method
 {
+    ccomparisonsBST++;
     if (_x == NULL)
     {
         return NULL;
